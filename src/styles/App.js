@@ -14,23 +14,7 @@ export const Header = styled.header`
   font-size: calc(10px + 2vmin);
   color: white;
 
-  img {
-    animation: App-logo-spin infinite 20s linear;
-    height: 40vmin;
-    pointer-events: none;
-  }
-
   a {
     color: #61dafb;
-  }
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
   }
 `;

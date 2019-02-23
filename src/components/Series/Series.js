@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Serie from '../Serie';
-import { StyledSerie } from '../styles/series';
+import { StyledSeries } from '../styles/series';
 
 const Series = ({ series }) => {
   return (
-    <StyledSerie>
+    <StyledSeries>
       <h4>Series</h4>
       {series.items.length &&
         series.items.map((serie, index) => {
@@ -14,7 +14,7 @@ const Series = ({ series }) => {
           }
           return null;
         })}
-    </StyledSerie>
+    </StyledSeries>
   );
 };
 
