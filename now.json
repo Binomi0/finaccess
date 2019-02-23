@@ -3,7 +3,7 @@
   "name": "nodejs",
   "builds": [
     {
-      "src": "*.js",
+      "src": "src/index.js",
       "use": "@now/node"
     }
   ]
