@@ -26,7 +26,7 @@ Por supuesto no dudes en escribirme para cualquier cuestión o pregunta.
 
 🙏 ¡Muchas gracias por tu esfuerzo!
 
-### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
