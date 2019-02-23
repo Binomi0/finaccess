@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Comic from '../Comic';
-import { StyledComic } from '../styles/comics';
+import { StyledComics } from '../styles/comics';
 
 const Comics = ({ comics }) => {
   return (
-    <StyledComic>
+    <StyledComics>
       <h4>Comics</h4>
       {comics.items.map((comic, index) => {
         if (index <= 2) {
@@ -13,7 +13,7 @@ const Comics = ({ comics }) => {
         }
         return null;
       })}
-    </StyledComic>
+    </StyledComics>
   );
 };
 

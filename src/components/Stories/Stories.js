@@ -7,18 +7,18 @@ const Stories = ({ stories }) => {
   return (
     <StyledStories>
       <h4>Stories</h4>
-      {stories.items.map((storie, index) => {
-        if (index <= 2) {
-          return <Storie key={storie.resourceURI} storie={storie} />;
-        }
-        return null;
-      })}
+      {stories.items.map(
+        (storie, index) =>
+          index <= 2 && <Storie key={storie.resourceURI} storie={storie} />,
+      )}
     </StyledStories>
   );
 };
 
 Stories.propTypes = {
-  stories: PropTypes.object.isRequired,
+  stories: PropTypes.shape({
+    items: PropTypes.array.isRequired,
+  }).isRequired,
 };
 
 export default Stories;

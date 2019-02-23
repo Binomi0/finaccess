@@ -11,3 +11,14 @@ export const StyledSerie = styled.div`
     font-size: 0.5rem;
   }
 `;
+export const StyledSeries = styled.div`
+  width: 100%;
+
+  h4 {
+    line-height: 0.9rem;
+  }
+
+  p {
+    font-size: 0.5rem;
+  }
+`;
