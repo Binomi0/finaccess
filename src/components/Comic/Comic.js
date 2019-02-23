@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
-import MarvelAPI from '../../api';
+import React from 'react';
+import { StyledComic } from '../styles/comics';
 
-export default class Comic extends Component {
-  state = {
-    ...this.props.comic,
-  };
+const Comic = ({ comic }) => {
+  const { resourceURI, name } = comic;
+  return (
+    <StyledComic>
+      <p key={resourceURI}>{name}</p>
+    </StyledComic>
+  );
+};
 
-  componentDidMount() {
-    // this.getComic();
-  }
-
-  getComic = () => {
-    MarvelAPI.comics.getComic(this.state.resourceURI).then((comic) => {
-      this.setState({ ...comic });
-    });
-  };
-
-  render() {
-    const { resourceURI, name } = this.state;
-    return <p key={resourceURI}>{name}</p>;
-  }
-}
+export default Comic;

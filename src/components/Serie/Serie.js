@@ -1,20 +1,9 @@
 import React from 'react';
-import MarvelAPI from '../../api';
+import { StyledSerie } from '../styles/series';
 
-const Serie = ({ serie: defaultSerie }) => {
-  const [serie, setSerie] = React.useState(defaultSerie);
-
-  const getSerie = async () => {
-    const serie = await MarvelAPI.series.getSerie(this.state.resourceURI);
-    setSerie(serie);
-  };
-
+const Serie = ({ serie }) => {
   const { resourceURI, name } = serie;
-  return (
-    <p onClick={getSerie} key={resourceURI}>
-      {name}
-    </p>
-  );
+  return <StyledSerie key={resourceURI}>{name}</StyledSerie>;
 };
 
 export default Serie;

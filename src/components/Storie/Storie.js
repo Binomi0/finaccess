@@ -1,18 +1,10 @@
-import React, { useState } from 'react';
-import MarvelAPI from '../../api';
-
+import React from 'react';
 import { StyledStorie } from '../styles/stories';
 
-const Storie = ({ storie: defaultStorie }) => {
-  const [storie, setStorie] = useState(defaultStorie);
-  const getStorie = async () => {
-    await MarvelAPI.stories.getStorie(this.state.resourceURI);
-    setStorie({ ...storie });
-  };
-
+const Storie = ({ storie }) => {
   const { resourceURI, name } = storie;
   return (
-    <StyledStorie onClick={getStorie}>
+    <StyledStorie>
       <p key={resourceURI}>{name}</p>
     </StyledStorie>
   );
