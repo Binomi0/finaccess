@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Promise from 'bluebird';
-
 import { apikey } from '../config';
 
 const options = { params: { apikey } };
@@ -11,7 +10,6 @@ export default {
       try {
         const { data } = await axios(URL, options);
 
-        // console.log('Comics =>', data.data.results[0]);
         resolve(data.data.results);
       } catch (error) {
         console.error(error);
@@ -24,10 +22,10 @@ export default {
       try {
         const { data } = await axios(URL, options);
 
-        // console.log('Comics =>', data.data.results[0]);
         resolve(data.data.results);
       } catch (error) {
         console.error(error);
+
         reject(error);
       }
     });

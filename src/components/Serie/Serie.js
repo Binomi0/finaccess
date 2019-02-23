@@ -1,25 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MarvelAPI from '../../api';
 
-class Serie extends Component {
-  state = {
-    ...this.props.serie,
+const Serie = ({ serie: defaultSerie }) => {
+  const [serie, setSerie] = React.useState(defaultSerie);
+
+  const getSerie = async () => {
+    const serie = await MarvelAPI.series.getSerie(this.state.resourceURI);
+    setSerie(serie);
   };
 
-  componentDidMount() {
-    // this.getSerie();
-  }
-
-  getSerie = () => {
-    MarvelAPI.series.getSerie(this.state.resourceURI).then((serie) => {
-      this.setState({ ...serie });
-    });
-  };
-
-  render() {
-    const { resourceURI, name } = this.state;
-    return <p key={resourceURI}>{name}</p>;
-  }
-}
+  const { resourceURI, name } = serie;
+  return (
+    <p onClick={getSerie} key={resourceURI}>
+      {name}
+    </p>
+  );
+};
 
 export default Serie;

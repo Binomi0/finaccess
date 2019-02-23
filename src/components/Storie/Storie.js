@@ -1,37 +1,21 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-
+import React, { useState } from 'react';
 import MarvelAPI from '../../api';
 
-const StyledStorie = styled.div`
-  width: 100%;
-`;
+import { StyledStorie } from '../styles/stories';
 
-class Storie extends Component {
-  state = {
-    ...this.props.storie,
+const Storie = ({ storie: defaultStorie }) => {
+  const [storie, setStorie] = useState(defaultStorie);
+  const getStorie = async () => {
+    await MarvelAPI.stories.getStorie(this.state.resourceURI);
+    setStorie({ ...storie });
   };
 
-  componentDidMount() {
-    // this.getStorie();
-  }
-
-  getStorie = () => {
-    MarvelAPI.stories.getStorie(this.state.resourceURI).then((storie) => {
-      this.setState({ ...storie });
-    });
-  };
-
-  render() {
-    const {
-      storie: { resourceURI, name },
-    } = this.props;
-    return (
-      <StyledStorie>
-        <p key={resourceURI}>{name}</p>
-      </StyledStorie>
-    );
-  }
-}
+  const { resourceURI, name } = storie;
+  return (
+    <StyledStorie onClick={getStorie}>
+      <p key={resourceURI}>{name}</p>
+    </StyledStorie>
+  );
+};
 
 export default Storie;

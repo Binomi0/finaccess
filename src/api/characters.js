@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Promise from 'bluebird';
-
 import { filters, apikey } from '../config';
 import mockedCharacters from '../db/mockedCharacters';
 
@@ -10,12 +9,13 @@ export default {
   getCharacters: (character = 'Thor') => {
     return new Promise(async (resolve, reject) => {
       try {
-        const URL = `${charactersURL}?apikey=${apikey}&nameStartsWith=${character}`;
+        const URL = `${charactersURL}?apikey=${apikey}&${filters}&nameStartsWith=${character}`;
         const { data } = await axios(URL);
 
         resolve(data.data.results);
       } catch (error) {
         console.error(error);
+
         reject(mockedCharacters.data.results);
       }
     });
@@ -23,11 +23,12 @@ export default {
   getCharacter: (URL) => {
     return new Promise(async (resolve, reject) => {
       try {
-        // const { data } = await axios(`${URL}?apikey=${apikey}`);
-        // console.log('CHARACTER =>', data.data.results[0]);
-        // resolve(data.data.results);
+        const { data } = await axios(`${URL}?apikey=${apikey}`);
+
+        resolve(data.data.results);
       } catch (error) {
         console.error(error);
+
         reject(error);
       }
     });

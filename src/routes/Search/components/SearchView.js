@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import SearchHeroes from '../../../components/SearchHeroes';
 import Character from '../../../components/Character';
 import MarvelAPI from '../../../api';
-import { CharacterContainer } from '../styles/styles';
+import { CharacterContainer, CharacterTitle } from '../styles/styles';
 
 class SearchView extends Component {
   state = {
@@ -30,9 +30,9 @@ class SearchView extends Component {
 
   render() {
     const { characters, selectedIndex } = this.state;
-    console.log(this.props);
     return (
       <div>
+        <CharacterTitle>Buscador de Heroes de Marvel</CharacterTitle>
         <SearchHeroes handleChange={this.handleChange} />
         <CharacterContainer active={characters.length && 1}>
           {characters.map((character, idx) => (

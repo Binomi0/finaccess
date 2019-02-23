@@ -18,7 +18,6 @@ export default class Comic extends Component {
 
   render() {
     const { resourceURI, name } = this.state;
-    // console.log('[Comic] this.state =>', this.state);
     return <p key={resourceURI}>{name}</p>;
   }
 }

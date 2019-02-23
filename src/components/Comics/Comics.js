@@ -14,15 +14,13 @@ class ComicsView extends React.Component {
     // this.getComics();
   }
 
-  getComics = () => {
-    Api.getComics(this.props.comics.collectionURI).then((data) => {
-      // console.log('getComics Data =>', data);
-    });
+  getComics = async () => {
+    const comic = await Api.getComics(this.props.comics.collectionURI);
+    this.setState({ ...comic });
   };
 
   render() {
     const { comics } = this.state;
-    console.log('Comics =>', comics);
     return (
       <StyledComic>
         <h4>Comics</h4>
