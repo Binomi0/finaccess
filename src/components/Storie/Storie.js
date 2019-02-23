@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { getStorie } from '../../api/stories';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import MarvelAPI from '../../api';
 
 const StyledStorie = styled.div`
   width: 100%;
@@ -18,7 +17,7 @@ class Storie extends Component {
   }
 
   getStorie = () => {
-    getStorie(this.state.resourceURI).then((storie) => {
+    MarvelAPI.stories.getStorie(this.state.resourceURI).then((storie) => {
       this.setState({ ...storie });
     });
   };

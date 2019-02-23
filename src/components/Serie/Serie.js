@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getSerie } from '../../api/series';
+import MarvelAPI from '../../api';
 
 class Serie extends Component {
   state = {
@@ -11,18 +11,14 @@ class Serie extends Component {
   }
 
   getSerie = () => {
-    getSerie(this.state.resourceURI).then((serie) => {
+    MarvelAPI.series.getSerie(this.state.resourceURI).then((serie) => {
       this.setState({ ...serie });
     });
   };
 
   render() {
     const { resourceURI, name } = this.state;
-    return (
-      <div>
-        <p key={resourceURI}>{name}</p>
-      </div>
-    );
+    return <p key={resourceURI}>{name}</p>;
   }
 }
 

@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import Comic from '../Comic';
-import { getComics } from '../../api/comics';
+import Api from '../../api';
 
-const StyledComic = styled.div`
-  width: 100%;
-`;
+import { StyledComic } from '../styles/comics';
 
 class ComicsView extends React.Component {
   state = {
@@ -18,18 +15,18 @@ class ComicsView extends React.Component {
   }
 
   getComics = () => {
-    getComics(this.props.comics.collectionURI).then((data) => {
+    Api.getComics(this.props.comics.collectionURI).then((data) => {
       // console.log('getComics Data =>', data);
     });
   };
 
   render() {
     const { comics } = this.state;
-    // console.log('Comics =>', comics);
+    console.log('Comics =>', comics);
     return (
       <StyledComic>
         <h4>Comics</h4>
-        {comics.map((comic, index) => {
+        {comics.items.map((comic, index) => {
           if (index <= 2) {
             return <Comic key={comic.resourceURI} comic={comic} />;
           }

@@ -5,5 +5,5 @@ export const CharacterContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   opacity: ${({ active }) => active};
-  transition: opacity 2s;
+  transition: opacity 1.2s ease-in-out;
 `;

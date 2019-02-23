@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledCharacter, Header, Content } from './styles';
+import { StyledCharacter, Header, Content } from '../styles/character';
 import Comics from '../Comics';
 import Series from '../Series';
 import Stories from '../Stories';
@@ -8,22 +8,27 @@ import Stories from '../Stories';
 class Character extends React.Component {
   state = {
     ...this.props.character,
+    selected: null,
   };
 
-  render() {
-    const { selected, handleClick, idx } = this.props;
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selected !== this.state.selected) {
+      this.setState({ selected: nextProps.selected });
+    }
+  }
 
+  render() {
+    const { handleClick, idx } = this.props;
     const {
       comics,
       stories,
       series,
       name,
+      selected,
       description,
       thumbnail: { path, extension },
     } = this.state;
-
     const characterImg = `${path}.${extension}`;
-    // console.log('this.state =>', this.state);
 
     return (
       <StyledCharacter onClick={() => handleClick(idx)} selected={selected}>
@@ -38,9 +43,9 @@ class Character extends React.Component {
           </p>
         </Header>
         <Content>
-          <Comics comics={comics.items} />
-          <Stories stories={stories[0].items} />
-          <Series series={series.items} />
+          <Comics comics={comics} />
+          <Stories stories={stories} />
+          <Series series={series} />
         </Content>
       </StyledCharacter>
     );

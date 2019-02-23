@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 
 export const StyledCharacter = styled.div`
-  background-color: rgba(255, 255, 255, 0.8);
-
+  background-color: ${(props) =>
+    props.selected ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.8)'};
+  color: ${({ selected }) =>
+    selected ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)'};
   width: 100%;
+  cursor: pointer;
 `;
 
 export const Header = styled.div`
   padding: 0;
-  /* display: flex;
-  justify-content: space-between; */
   img {
     object-fit: contain;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
   }
 
   h4,

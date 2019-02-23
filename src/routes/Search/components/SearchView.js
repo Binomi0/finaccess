@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Skeleton from 'react-loading-skeleton';
 
+import SearchHeroes from '../../../components/SearchHeroes';
 import Character from '../../../components/Character';
-import { getCharacters } from '../../../api/characters';
+import MarvelAPI from '../../../api';
 import { CharacterContainer } from '../styles/styles';
 
 class SearchView extends Component {
@@ -19,27 +19,33 @@ class SearchView extends Component {
     this.setState({ selectedIndex });
   };
 
-  getCharacters = async () => {
-    const characters = await getCharacters();
+  handleChange = ({ target: { value: character } }) => {
+    this.getCharacters(character);
+  };
+
+  getCharacters = async (character) => {
+    const characters = await MarvelAPI.characters.getCharacters(character);
     this.setState({ characters });
   };
 
   render() {
     const { characters, selectedIndex } = this.state;
-    const character = characters.map((character, idx) => (
-      <Character
-        key={character.id}
-        character={character}
-        handleClick={this.handleClick}
-        selected={selectedIndex === idx}
-        idx={idx}
-      />
-    ));
-
+    console.log(this.props);
     return (
-      <CharacterContainer active={characters.length && 1}>
-        {character}
-      </CharacterContainer>
+      <div>
+        <SearchHeroes handleChange={this.handleChange} />
+        <CharacterContainer active={characters.length && 1}>
+          {characters.map((character, idx) => (
+            <Character
+              key={character.id}
+              character={character}
+              handleClick={this.handleClick}
+              selected={selectedIndex === idx}
+              idx={idx}
+            />
+          ))}
+        </CharacterContainer>
+      </div>
     );
   }
 }
