@@ -4,7 +4,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 // Public pages
 import NotFound from '../../views/NotFound';
-import Search from '../../../routes/Search';
+import Main from '../../../routes/Search';
 
 const customHistory = createBrowserHistory();
 
@@ -18,10 +18,10 @@ const App = () => {
     <Router history={customHistory}>
       <Switch>
         <Route
-          path="/search"
+          path="/"
           render={() => {
             fetchCommonData();
-            return <Search />;
+            return <Main />;
           }}
         />
         <Route path="*" component={NotFound} />

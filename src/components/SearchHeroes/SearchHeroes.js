@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
-import { SearchHeroesContainer, InputHeroes } from '../styles/searchHeroes';
+import {
+  SearchHeroesContainer,
+  InputHeroes,
+  SearchButton,
+} from '../styles/searchHeroes';
 
 const SearchHeroes = ({ handleChange }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Thor');
 
   return (
     <SearchHeroesContainer>
       <InputHeroes
-        type="text"
         name="heroe"
+        type="text"
         value={name}
         onChange={({ target }) => setName(target.value)}
-        onBlur={handleChange}
       />
+      <SearchButton onClick={() => handleChange(name)}>
+        <span role="img" aria-label="magnifier">
+          🔍
+        </span>
+      </SearchButton>
     </SearchHeroesContainer>
   );
 };

@@ -19,7 +19,7 @@ class SearchView extends Component {
     this.setState({ selectedIndex });
   };
 
-  handleChange = ({ target: { value: character } }) => {
+  handleChange = (character) => {
     this.getCharacters(character);
   };
 
