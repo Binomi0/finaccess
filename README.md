@@ -1,6 +1,6 @@
 # ☝️Construir una pequeña aplicación con Api Marvel
 
-## Requisitos mínimos:
+### Requisitos mínimos:
 
 ### La aplicación deberá contener:
 
@@ -11,13 +11,14 @@
 - Detalles técnicos mínimos:
 
 - Conectar con el Api de Marvel
+
   - http://gateway.marvel.com/v1/public/characters?limit=12&nameStartsWith=${character}&apikey=${key}
 
-## Crear un cliente con ReactJs.
+- Crear un cliente con ReactJs.
 
-## Maquetación css con flexbox o css grid.
+- Maquetación css con flexbox o css grid.
 
-## Alojar el proyecto en github.
+- Alojar el proyecto en github.
 
 Una vez finalizada mandar enlace de github a mdelgado@fintonic.com.
 
