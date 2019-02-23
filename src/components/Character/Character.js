@@ -1,61 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledCharacter, Header, Content } from '../styles/character';
 import Comics from '../Comics';
 import Series from '../Series';
 import Stories from '../Stories';
+import CharacterHeader from './CharacterHeader';
+import { StyledCharacter, Content } from '../styles/character';
 
-class Character extends React.Component {
-  state = {
-    ...this.props.character,
-    selected: null,
-  };
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selected !== this.state.selected) {
-      this.setState({ selected: nextProps.selected });
-    }
-  }
-
-  render() {
-    const { handleClick, idx } = this.props;
-    const {
-      comics,
-      stories,
-      series,
-      name,
-      selected,
-      description,
-      thumbnail: { path, extension },
-    } = this.state;
-    const characterImg = `${path}.${extension}`;
-
-    return (
-      <StyledCharacter onClick={() => handleClick(idx)} selected={selected}>
-        <Header>
-          <img src={characterImg} alt="character" />
-          <h4>Nombre: {name}</h4>
-          <p>
-            Descripción:{' '}
-            {description
-              ? description
-              : 'Ups! Parece que no he encontrado una descripción...'}
-          </p>
-        </Header>
-        <Content>
-          <Comics comics={comics} />
-          <Stories stories={stories} />
-          <Series series={series} />
-        </Content>
-      </StyledCharacter>
-    );
-  }
-}
+const Character = ({ selected, handleClick, idx, character }) => {
+  const { comics, stories, series, name, description, thumbnail } = character;
+  return (
+    <StyledCharacter onClick={() => handleClick(idx)} selected={selected}>
+      <CharacterHeader
+        thumbnail={thumbnail}
+        name={name}
+        description={description}
+      />
+      <Content>
+        <Comics comics={comics} />
+        <Stories stories={stories} />
+        <Series series={series} />
+      </Content>
+    </StyledCharacter>
+  );
+};
 
 Character.propTypes = {
   character: PropTypes.shape({
     comics: PropTypes.object.isRequired,
+    stories: PropTypes.object.isRequired,
+    series: PropTypes.object.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    thumbnail: PropTypes.object.isRequired,
   }).isRequired,
+  handleClick: PropTypes.func.isRequired,
+  idx: PropTypes.number.isRequired,
+  selected: PropTypes.bool.isRequired,
 };
 
 export default Character;

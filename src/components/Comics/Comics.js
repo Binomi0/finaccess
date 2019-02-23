@@ -7,18 +7,18 @@ const Comics = ({ comics }) => {
   return (
     <StyledComics>
       <h4>Comics</h4>
-      {comics.items.map((comic, index) => {
-        if (index <= 2) {
-          return <Comic key={comic.resourceURI} comic={comic} />;
-        }
-        return null;
-      })}
+      {comics.items.map(
+        (comic, index) =>
+          index <= 2 && <Comic key={comic.resourceURI} comic={comic} />,
+      )}
     </StyledComics>
   );
 };
 
 Comics.propTypes = {
-  comics: PropTypes.object.isRequired,
+  comics: PropTypes.shape({
+    items: PropTypes.array.isRequired,
+  }).isRequired,
 };
 
 export default Comics;
