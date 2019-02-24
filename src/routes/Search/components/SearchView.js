@@ -15,7 +15,7 @@ const SearchView = () => {
 
   useEffect(() => {
     getCharacters();
-  }, [characters])
+  }, [characters]);
 
   const handleChange = (character) => {
     getCharacters(character);
@@ -26,9 +26,8 @@ const SearchView = () => {
     setCharacter(character);
   };
 
-
   return (
-    <div>
+    <>
       <CharacterTitle>Buscador de Heroes de Marvel</CharacterTitle>
       <SearchHeroes handleChange={handleChange} />
       <CharacterContainer active={characters.length && 1}>
@@ -42,8 +41,8 @@ const SearchView = () => {
           />
         ))}
       </CharacterContainer>
-    </div>
+    </>
   );
-}
+};
 
 export default SearchView;

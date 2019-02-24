@@ -62,34 +62,30 @@ const characters = {
           ],
           returned: 3,
         },
-        stories: [
-          {
-            available: 3,
-            collectionURI:
-              'http://gateway.marvel.com/v1/public/characters/1011298/stories',
-            items: [
-              {
-                name: 'ASTONISHING X-MEN (2004) #25',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/47427',
-                type: 'cover',
-              },
-              {
-                name: 'ASTONISHING X-MEN (2004) #26',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/47735',
-                type: 'cover',
-              },
-              {
-                name: 'ASTONISHING X-MEN (2004) #27',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/48233',
-                type: 'cover',
-              },
-            ],
-            returned: 3,
-          },
-        ],
+        stories: {
+          available: 3,
+          collectionURI:
+            'http://gateway.marvel.com/v1/public/characters/1011298/stories',
+          items: [
+            {
+              name: 'ASTONISHING X-MEN (2004) #25',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/47427',
+              type: 'cover',
+            },
+            {
+              name: 'ASTONISHING X-MEN (2004) #26',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/47735',
+              type: 'cover',
+            },
+            {
+              name: 'ASTONISHING X-MEN (2004) #27',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/48233',
+              type: 'cover',
+            },
+          ],
+          returned: 3,
+        },
+
         thumbnail: {
           path: 'http://i.annihil.us/u/prod/marvel/i/mg/9/20/4c002e6cbf990',
           extension: 'jpg',
@@ -165,34 +161,30 @@ const characters = {
           ],
           returned: 3,
         },
-        stories: [
-          {
-            available: 3,
-            collectionURI:
-              'http://gateway.marvel.com/v1/public/characters/1011298/stories',
-            items: [
-              {
-                name: 'ASTONISHING X-MEN (2004) #25',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/47427',
-                type: 'cover',
-              },
-              {
-                name: 'ASTONISHING X-MEN (2004) #26',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/47735',
-                type: 'cover',
-              },
-              {
-                name: 'ASTONISHING X-MEN (2004) #27',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/48233',
-                type: 'cover',
-              },
-            ],
-            returned: 3,
-          },
-        ],
+        stories: {
+          available: 3,
+          collectionURI:
+            'http://gateway.marvel.com/v1/public/characters/1011298/stories',
+          items: [
+            {
+              name: 'ASTONISHING X-MEN (2004) #25',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/47427',
+              type: 'cover',
+            },
+            {
+              name: 'ASTONISHING X-MEN (2004) #26',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/47735',
+              type: 'cover',
+            },
+            {
+              name: 'ASTONISHING X-MEN (2004) #27',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/48233',
+              type: 'cover',
+            },
+          ],
+          returned: 3,
+        },
+
         thumbnail: {
           path: 'http://i.annihil.us/u/prod/marvel/i/mg/9/20/4c002e6cbf990',
           extension: 'jpg',
@@ -268,34 +260,30 @@ const characters = {
           ],
           returned: 3,
         },
-        stories: [
-          {
-            available: 3,
-            collectionURI:
-              'http://gateway.marvel.com/v1/public/characters/1011298/stories',
-            items: [
-              {
-                name: 'ASTONISHING X-MEN (2004) #25',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/47427',
-                type: 'cover',
-              },
-              {
-                name: 'ASTONISHING X-MEN (2004) #26',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/47735',
-                type: 'cover',
-              },
-              {
-                name: 'ASTONISHING X-MEN (2004) #27',
-                resourceURI:
-                  'http://gateway.marvel.com/v1/public/stories/48233',
-                type: 'cover',
-              },
-            ],
-            returned: 3,
-          },
-        ],
+        stories: {
+          available: 3,
+          collectionURI:
+            'http://gateway.marvel.com/v1/public/characters/1011298/stories',
+          items: [
+            {
+              name: 'ASTONISHING X-MEN (2004) #25',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/47427',
+              type: 'cover',
+            },
+            {
+              name: 'ASTONISHING X-MEN (2004) #26',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/47735',
+              type: 'cover',
+            },
+            {
+              name: 'ASTONISHING X-MEN (2004) #27',
+              resourceURI: 'http://gateway.marvel.com/v1/public/stories/48233',
+              type: 'cover',
+            },
+          ],
+          returned: 3,
+        },
+
         thumbnail: {
           path: 'http://i.annihil.us/u/prod/marvel/i/mg/9/20/4c002e6cbf990',
           extension: 'jpg',
