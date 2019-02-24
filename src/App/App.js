@@ -16,8 +16,7 @@ const App = () => {
       <Switch>
         <Route
           path="/"
-          render={(props) => {
-            console.log('PRops =>', props);
+          render={() => {
             getDefaults();
             return <SearchMarvelCharacterView />;
           }}
