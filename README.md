@@ -1,4 +1,4 @@
-# ☝️Construir una pequeña aplicación con Api Marvel
+# ☝️ Construir una pequeña aplicación con Api Marvel
 
 ### Requisitos mínimos:
 
