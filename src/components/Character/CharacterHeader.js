@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '../styles/character';
+import { StyledCharacterHeader } from '../styles/character';
 
 const CharacterHeader = ({
   thumbnail: { path, extension },
   name,
   description,
 }) => (
-  <Header>
+  <StyledCharacterHeader>
     <img src={`${path}.${extension}`} alt="character" />
     <h4>Nombre: {name}</h4>
     <p>
@@ -16,7 +16,7 @@ const CharacterHeader = ({
         ? description
         : 'Ups! Parece que no he encontrado una descripción...'}
     </p>
-  </Header>
+  </StyledCharacterHeader>
 );
 
 CharacterHeader.propTypes = {

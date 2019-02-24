@@ -26,6 +26,24 @@ Por supuesto no dudes en escribirme para cualquier cuestión o pregunta.
 
 🙏 ¡Muchas gracias por tu esfuerzo!
 
+# Publicada en [Firebase](https://fir-js-e6fe5.firebaseapp.com/) y en [Now.sh](https://finaccess-j3qp9e7he.now.sh/)
+
+## Puesta en marcha
+
+- Creamos una carpeta para almacenar el proyecto
+  - cd carpeta_creada
+- Nos descargamos el repositorio
+  - git clone https://github.com/Binomi0/finaccess.git
+- Instalamos las dependencias
+  - npm i
+- Lanzamos el servidor de desarrollo
+  - npm start
+
+## Desarrollo
+
+Integración continua desplegará cualquier rama en desarrollo que subamos al repositorio en un entorno de `preproducción`
+Cualquiero commit directo a `master` o `PR` de cualquier rama hacia master desencadena un despliegue en produción tras el merge.
+
 # This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

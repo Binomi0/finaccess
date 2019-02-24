@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import SearchHeroes from '../../../components/SearchHeroes';
 import Character from '../../../components/Character';
 import MarvelAPI from '../../../api';

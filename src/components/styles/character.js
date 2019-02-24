@@ -9,7 +9,7 @@ export const StyledCharacter = styled.div`
   cursor: pointer;
 `;
 
-export const Header = styled.div`
+export const StyledCharacterHeader = styled.div`
   padding: 0;
   img {
     object-fit: contain;
