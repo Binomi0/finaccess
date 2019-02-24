@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Serie from '../Serie';
 import { StyledSeries } from '../styles/series';
 

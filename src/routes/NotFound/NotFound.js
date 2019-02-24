@@ -5,7 +5,7 @@ export default class NotFound extends Component {
     return (
       <div>
         Página no encontrada prueba{' '}
-        <a href="/app/search" target="_self">
+        <a href="/" target="_self">
           aquí
         </a>
       </div>
