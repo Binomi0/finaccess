@@ -8,7 +8,6 @@ import { StyledCharacter, Content } from '../styles/character';
 
 const Character = ({ selected, handleClick, idx, character }) => {
   const { comics, stories, series, name, description, thumbnail } = character;
-  console.log('Character =>', character);
   return (
     <StyledCharacter onClick={() => handleClick(idx)} selected={selected}>
       <CharacterHeader
