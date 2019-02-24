@@ -19,6 +19,8 @@
     "debounce": "^1.2.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "5.12.0",
     "eslint-config-react-app": "^3.0.7",
     "eslint-loader": "2.1.1",
@@ -49,6 +51,7 @@
     "react-dom": "^16.8.3",
     "react-loading-skeleton": "^1.0.0",
     "react-router": "^4.3.1",
+    "react-test-renderer": "^16.8.3",
     "react-testing-library": "^5.9.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
@@ -65,6 +68,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
+    "coverage": "node scripts/test.js --coverage",
     "now-build": "node scripts/build.js"
   },
   "eslintConfig": {
@@ -80,6 +84,12 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/styles/*.*",
+      "<rootDir>/src/api/*.*",
+      "<rootDir>/src/index.js",
+      "<rootDir>/src/serviceWorker.js"
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
@@ -126,7 +136,5 @@
       "react-app"
     ]
   },
-  "devDependencies": {
-    "react-test-renderer": "^16.8.3"
-  }
+  "devDependencies": {}
 }
