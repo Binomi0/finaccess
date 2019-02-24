@@ -14,9 +14,12 @@ export default {
 
         resolve(data.data.results);
       } catch (error) {
-        console.error(error);
 
-        reject(mockedCharacters.data.results);
+        if (!mockedCharacters.data.results) {
+          console.error(error);
+          reject(mockedCharacters.data.results);
+        }
+        resolve(mockedCharacters.data.results)
       }
     });
   },

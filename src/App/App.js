@@ -2,16 +2,13 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 
-// Public pages
-import NotFound from '../../views/NotFound';
-import Main from '../../../routes/Search';
+import PageNotFound from '../routes/NotFound';
+import SearchMarvelCharacterView from '../routes/Search';
 
 const customHistory = createBrowserHistory();
 
+// Maybe start loading some async data
 const getDefaults = () => {};
-const fetchCommonData = () => {
-  getDefaults();
-};
 
 const App = () => {
   return (
@@ -19,12 +16,13 @@ const App = () => {
       <Switch>
         <Route
           path="/"
-          render={() => {
-            fetchCommonData();
-            return <Main />;
+          render={(props) => {
+            console.log('PRops =>', props);
+            getDefaults();
+            return <SearchMarvelCharacterView />;
           }}
         />
-        <Route path="*" component={NotFound} />
+        <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
   );
